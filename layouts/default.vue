@@ -11,10 +11,10 @@
             <div
               class="font-bold flex text-xl sm:text-3xl my_hover px-2 justify-between w-full sm:w-auto"
             >
-              <div class="sm:hidden">
+              <!-- <div class="sm:hidden">
                 <DarkmodeBtn :toggleDarkMode="toggleDarkMode" />
-              </div>
-              <NuxtLink class="text-center" to="/"> Home </NuxtLink>
+              </div> -->
+              <NuxtLink class="text-center" v-if="!isHomePage" to="/"> Home </NuxtLink>
               <div class="block sm:hidden text-right">
                 <button
                   aria-label="show menu button"
@@ -26,7 +26,7 @@
                 </button>
               </div>
             </div>
-            <div
+            <!-- <div
               :class="['font-bold sm:flex my-5 sm:my-0 space-x-0 sm:space-x-3 md:space-x-10  divide-y sm:justify-center divide-gray-200 sm:divide-y-0 w-[100vw] shadow-lg sm:shadow-none',isMenuOpen?'block':'hidden']"
             >
               <NuxtLink
@@ -59,19 +59,19 @@
               >
                 Contact
               </NuxtLink>
-            </div>
+            </div> -->
             <div class="hidden sm:flex sm:items-center text-base text-primary-light space-x-2">
-              <div class="">
+              <!-- <div class="">
                 <DarkmodeBtn :toggleDarkMode="toggleDarkMode" />
-              </div>
-              <NuxtLink class="" to="/contact">
+              </div> -->
+              <!-- <NuxtLink class="" to="/contact">
                 <button
                   id="contactbutton"
                   class=" scale-90 rounded-lg p-3 my_hover  bg-m4 px-4  "
                 >
                   Contacts
                 </button>
-              </NuxtLink>
+              </NuxtLink> -->
             </div>
           </div>
         </div>
@@ -84,8 +84,12 @@
           <div
             class="pt-14 pb-10 flex-col sm:flex-row flex text-center justify-between"
           >
-            <div class="my_hover">No Copyright © {{currentYear}} Jovylle</div>
-            <div class="my_hover">Powered by NuxtJS</div>
+            <div class="my_hover">No Copyright © {{currentYear}}</div>
+            <!-- <div class="my_hover">No Copyright © {{currentYear}} Jovylle</div> -->
+            <div class="my_hover">
+              <div class="">
+                <DarkmodeBtn :toggleDarkMode="toggleDarkMode" />
+              </div></div>
           </div>
         </div>
       </section>
@@ -97,9 +101,14 @@
 export default {
   data(){
     return{
-      darkMode: true,
+      darkMode: false,
       currentYear: new Date().getFullYear(),
       isMenuOpen: false
+    }
+  },
+  computed: {
+    isHomePage() {
+      return this.$route.path === '/' || this.$route.path === '/home';
     }
   },
   methods: {
