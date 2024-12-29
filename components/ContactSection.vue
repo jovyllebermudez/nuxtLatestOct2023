@@ -1,5 +1,5 @@
 <template>
-  <section class="md:h-[60vh] flex_center" id="contact">
+  <section class="md:h-[40vh] flex_center" id="contact">
     <div class="container my-10">
       <h2
         class="text-3xl sm:text-5xl text-center font-semibold my-8 my_hover"

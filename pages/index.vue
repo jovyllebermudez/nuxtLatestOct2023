@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-10 lg:space-y-32 max-w-[1280px] mx-auto">
-    <section class="md:min-h-[80vh] flex_center py-8 ">
+    <section class="md:min-h-[40vh] flex_center py-8 ">
       <div class="container mx-auto block lg:flex_center">
         <!-- <div class="px-10 md:px-10">
           <img
@@ -26,7 +26,9 @@
         </div>
       </div>
     </section>
-    <section class="md:min-h-[60vh] flex_center" id="about">
+    
+    <HomeCards />
+    <!-- <section class="md:min-h-[60vh] flex_center" id="about">
       <div class="container text-center space-y-10 sm:space-y-14">
         <h2
           class="text-3xl sm:text-5xl text-center font-semibold my-8 my_hover"
@@ -45,8 +47,8 @@
           </p>
         </div>
       </div>
-    </section>
-    <ContactSection />
+    </section> -->
+    <!-- <ContactSection /> -->
   </div>
 </template>
 <script setup>
