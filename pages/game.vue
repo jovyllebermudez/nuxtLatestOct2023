@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <h1>Welcome to Minesweeper</h1>
+  <div class="text-center">
+    <h1 class="mx-auto">Welcome to Minesweeper</h1>
     
-    <MinesweeperGame />
-    
+    <div class="max-w-[800px] mx-auto">
+      
+      <MinesweeperGame />
+    </div>
     <giscus />
   </div>
 </template>
