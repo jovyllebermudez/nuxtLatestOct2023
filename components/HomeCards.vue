@@ -9,7 +9,10 @@
           @click="goTo(link.route)"
         >
           <div class="icon mb-4">{{ link.icon }}</div>
-          <p class="font-general-semibold text-md sm:text-xl font-semibold p-0">{{ link.label }}</p>
+          <p class="font-general-semibold text-md sm:text-xl font-semibold p-0">
+            {{ link.label }}
+            <span v-if="link.external" class="text-sm text-gray-500 ml-2">(External)</span>
+          </p>
         </div>
       </div>
     </div>
@@ -18,16 +21,19 @@
 
 <script setup>
 const links = [
-  { label: "About Me", route: "/about", icon: "👨‍💻" },
-  { label: "Projects", route: "/projects", icon: "🚀" },
-  { label: "Contact Me", route: "/contact", icon: "📧" },
-  { label: "Rainsound", route: "/noises", icon: "🎵" },
-  { label: "Minesweeper", route: "/game", icon: "🎮" },
+  { label: "About Me", route: "https://hub.jovylle.com/", icon: "👨‍💻", external: true },
+  { label: "Projects", route: "/projects", icon: "🚀", external: false },
+  { label: "Contact Me", route: "/contact", icon: "📧", external: false },
+  { label: "Rainsound", route: "/noises", icon: "🎵", external: false },
+  { label: "Minesweeper", route: "/game", icon: "🎮", external: false },
 ];
 
 const goTo = (route) => {
-  // Navigate to the desired route
-  window.location.href = route;
+  if (route.startsWith("http")) {
+    window.open(route, "_blank");
+  } else {
+    window.location.href = route;
+  }
 };
 </script>
 
