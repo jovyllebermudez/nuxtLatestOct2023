@@ -5,12 +5,12 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://cloud.umami.is/script.js',
+          src: "https://cloud.umami.is/script.js",
           defer: true,
-          'data-website-id': '2a85dd0e-ac8c-4745-8bad-5e8fc05c3d4a'
-        }
-      ]
-    }
+          "data-website-id": "2a85dd0e-ac8c-4745-8bad-5e8fc05c3d4a",
+        },
+      ],
+    },
   },
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
