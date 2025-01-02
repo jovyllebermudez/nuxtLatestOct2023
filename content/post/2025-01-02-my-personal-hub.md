@@ -1,0 +1,46 @@
+---
+layout: blog
+title: My Personal Hub
+date: 2024-03-22T13:58:00.000Z
+thumbnail: /decap/images/uploads/screenshot_20250102_135614.png
+---
+# My Personal Hub
+
+<i class="bx bxs-purchase-tag"></i> Blog Website <i class="bx bxs-time"></i> 2025<br>
+<br>
+
+![nextjs](/image-nextjs.png)
+
+### Technologies that I have worked on here
+
+- Next.js
+- React
+- TailwindCSS
+- MDX
+- Vercel Deployment
+- JavaScript (ES6+)
+- CSS Modules
+
+### Responsibility
+
+I designed, developed, and coded this modern blog website from the ground up. My main goal was to create an engaging and visually striking platform that allows me to share my personal interests, opinions, and creative ideas.
+
+Key responsibilities included:
+
+- Designing an intuitive and responsive user interface to ensure a seamless browsing experience across devices.
+- Developing dynamic, SEO-optimized pages using Next.js to improve site performance and visibility.
+- Integrating MDX to create a flexible blogging environment for publishing markdown-based content with custom React components.
+- Styling the website with TailwindCSS, focusing on a clean and modern aesthetic.
+- Ensuring fast load times and smooth navigation through code optimization and deployment on Vercel.
+- Continuously iterating on design and functionality to incorporate new features and improve user engagement.
+
+Collaboration with tools and libraries was integral to achieve a polished final product. By staying up-to-date with the latest trends in frontend development, I ensured the site delivers both an engaging experience and robust technical performance.
+
+### Disclaimer
+
+This project represents a personal endeavor and is displayed here for informational and demonstration purposes. It is a showcase of my skills, creativity, and dedication to building high-quality web experiences.
+
+Please note that the descriptions, images, and information related to this project reflect my individual contributions as a designer and developer. They are not associated with any external organization or client.
+
+For further details about this project or to discuss my qualifications, feel free to reach out to me directly.
+
