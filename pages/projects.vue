@@ -7,9 +7,21 @@ const projects = await queryContent('projects').find()
   <div>
     <div class="container mx-auto ">
       <section class="my-5 sm:my-14">
+        <div class="text-center">
+          <p
+            class="font-general-semibold text-xl sm:text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
+          >
+            Quick Links
+          </p>
+        </div>
         <div
           class="sm:space-x-10 text-center flex justify-center flex-col sm:block"
         >
+          <NuxtLink class="underline inline-block mt-4" to="https://gptfree.uft1.com/" target="_blank">Chat Bot gpt3.5 ↗</NuxtLink>
+          <NuxtLink class="underline inline-block mt-4" to="https://friendmc.uft1.com/" target="_blank">Our Minecraft Server ↗</NuxtLink>
+          <NuxtLink class="underline inline-block mt-4" to="https://sunflower-land-helper.jovylle.com/" target="_blank">Sunflowerland game Extension ↗</NuxtLink>
+          <NuxtLink class="underline inline-block mt-4" to="https://flyingstickfigure.atcebu.win/" target="_blank">Stick Figure Simple PhaserJs Game ↗</NuxtLink>
+          <NuxtLink class="underline inline-block mt-4" to="https://is-home-online.uft1.com/" target="_blank">Check if home server is online ↗</NuxtLink>
           <NuxtLink class="underline inline-block mt-4" to="/noises">♪ Rain Sound Noise ♪</NuxtLink>
           <NuxtLink class="underline inline-block mt-4" to="/parallax">Parallax Effect</NuxtLink>
           <!-- <NuxtLink class="underline inline-block mt-4" to="/game">minesweeper</NuxtLink> -->
