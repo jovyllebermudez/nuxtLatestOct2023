@@ -24,8 +24,8 @@ const links = [
   { label: "About Me", route: "https://hub.jovylle.com/", icon: "👨‍💻", external: true },
   { label: "Projects", route: "/projects", icon: "🚀", external: false },
   { label: "Contact Me", route: "/contact", icon: "📧", external: false },
-  { label: "Rainsound", route: "/noises", icon: "🎵", external: false },
-  { label: "Minesweeper", route: "/game", icon: "🎮", external: false },
+  // { label: "Rainsound", route: "/noises", icon: "🎵", external: false },
+  // { label: "Minesweeper", route: "/game", icon: "🎮", external: false },
 ];
 
 const goTo = (route) => {
