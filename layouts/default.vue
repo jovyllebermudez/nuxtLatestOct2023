@@ -2,9 +2,7 @@
   <div
     :class='" text-lg overflow-hidden flex flex-col tracking-wider " + (darkMode?"dark bg-ternary-dark":"bg-ternary-light ")'
   >
-    <div
-      class="container mx-auto px-4 max-w-6xl flex flex-col min-h-[100vh] text-primary-dark dark:text-primary-light"
-    >
+    <div class="container mx-auto px-4 max-w-6xl flex flex-col min-h-[100vh] text-primary-dark dark:text-primary-light">
       <section class="">
         <div class="container sm:mx-auto">
           <div
@@ -16,9 +14,7 @@
               <!-- <div class="sm:hidden">
                 <DarkmodeBtn :toggleDarkMode="toggleDarkMode" />
               </div> -->
-              <NuxtLink class="text-center" v-if="!isHomePage" to="/">
-                Home
-              </NuxtLink>
+              <NuxtLink class="text-center" v-if="!isHomePage" to="/"> Home </NuxtLink>
               <div class="block sm:hidden text-right">
                 <button
                   aria-label="show menu button"
@@ -64,9 +60,7 @@
                 Contact
               </NuxtLink>
             </div> -->
-            <div
-              class="hidden sm:flex sm:items-center text-base text-primary-light space-x-2"
-            >
+            <div class="hidden sm:flex sm:items-center text-base text-primary-light space-x-2">
               <!-- <div class="">
                 <DarkmodeBtn :toggleDarkMode="toggleDarkMode" />
               </div> -->
@@ -114,12 +108,7 @@
         />
       </svg>
     </button>
-    <Chatbot
-      v-if="showChatbot"
-      :skills="skills"
-      :projects="projects"
-      @close="toggleChatbot"
-    />
+    <Chatbot v-if="showChatbot" :skills="skills" :projects="projects" @close="toggleChatbot" />
   </div>
 </template>
 
@@ -164,6 +153,12 @@ export default {
       this.showChatbot = !this.showChatbot;
     }
   },
+  mounted() {
+    window.addEventListener('toggle-chatbot', this.toggleChatbot);
+  },
+  beforeDestroy() {
+    window.removeEventListener('toggle-chatbot', this.toggleChatbot);
+  }
 }
 </script>
 
