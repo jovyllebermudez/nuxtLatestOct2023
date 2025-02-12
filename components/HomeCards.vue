@@ -21,6 +21,7 @@
 
 <script setup>
 const links = [
+  { label: "Try the Chat AI", route: "#", icon: "🤖", external: false }, // New card for Chat AI
   { label: "About Me", route: "https://hub.jovylle.com/", icon: "👨‍💻", external: true },
   { label: "Projects", route: "/projects", icon: "🚀", external: false },
   { label: "Contact Me", route: "/contact", icon: "📧", external: false },
@@ -31,6 +32,10 @@ const links = [
 const goTo = (route) => {
   if (route.startsWith("http")) {
     window.open(route, "_blank");
+  } else if (route === "#") {
+    // Trigger the chatbot toggle if the route is "#"
+    const event = new CustomEvent('toggle-chatbot');
+    window.dispatchEvent(event);
   } else {
     window.location.href = route;
   }

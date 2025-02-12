@@ -89,22 +89,56 @@
             <div class="my_hover">
               <div class="">
                 <DarkmodeBtn :toggleDarkMode="toggleDarkMode" />
-              </div></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </div>
+    <button @click="toggleChatbot" class="chatbot-toggle-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#FFFFFF"
+      >
+        <path
+          d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"
+        />
+      </svg>
+    </button>
+    <Chatbot v-if="showChatbot" :skills="skills" :projects="projects" @close="toggleChatbot" />
   </div>
 </template>
 
 <script>
+import Chatbot from '~/components/Chatbot.vue';
+
 export default {
-  data(){
-    return{
+  components: {
+    Chatbot
+  },
+  data() {
+    return {
       darkMode: false,
       currentYear: new Date().getFullYear(),
-      isMenuOpen: false
-    }
+      isMenuOpen: false,
+      showChatbot: false,
+      skills: ["JavaScript", "Nuxt.js", "Vue.js", "CSS", "HTML"], // Example skills
+      projects: [
+        {
+          name: "Portfolio Website",
+          description: "A personal portfolio website to showcase my projects and skills.",
+          link: "https://example.com"
+        },
+        {
+          name: "Chatbot Integration",
+          description: "A chatbot integrated into a website using OpenAI's GPT model.",
+          link: "https://example.com"
+        }
+      ] // Example projects
+    };
   },
   computed: {
     isHomePage() {
@@ -115,6 +149,35 @@ export default {
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
     },
+    toggleChatbot() {
+      this.showChatbot = !this.showChatbot;
+    }
   },
+  mounted() {
+    window.addEventListener('toggle-chatbot', this.toggleChatbot);
+  },
+  beforeDestroy() {
+    window.removeEventListener('toggle-chatbot', this.toggleChatbot);
+  }
 }
 </script>
+
+<style scoped>
+.chatbot-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
