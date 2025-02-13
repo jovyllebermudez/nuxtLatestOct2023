@@ -6,7 +6,7 @@
       <section class="">
         <div class="container sm:mx-auto">
           <div
-            class="py-6 md:py-12 flex items-center justify-between flex-col sm:flex-row"
+            class="py-6 md:py-9 flex items-center justify-between flex-col sm:flex-row"
           >
             <div
               class="font-bold flex text-xl sm:text-3xl my_hover px-2 justify-between w-full sm:w-auto"
@@ -82,7 +82,7 @@
       <section class="footer-section w-[100%]">
         <div class="container mx-auto">
           <div
-            class="pt-14 pb-10 flex-col sm:flex-row flex text-center justify-between"
+            class="pt-12 pb-10 flex-col sm:flex-row flex text-center justify-between"
           >
             <div class="my_hover">No Copyright © {{currentYear}}</div>
             <!-- <div class="my_hover">No Copyright © {{currentYear}} Jovylle</div> -->
@@ -95,7 +95,7 @@
         </div>
       </section>
     </div>
-    <button @click="toggleChatbot" class="chatbot-toggle-button">
+    <button @click="toggleChatbot" class="chatbot-toggle-button bg-m4 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
@@ -125,7 +125,18 @@ export default {
       currentYear: new Date().getFullYear(),
       isMenuOpen: false,
       showChatbot: false,
-      skills: ["JavaScript", "Nuxt.js", "Vue.js", "CSS", "HTML"], // Example skills
+      skills: [
+        "JavaScript", "PHP", "Python", "HTML", "CSS",
+        "VueJs", "ReactJs", "NuxtJs", "Laravel", "CodeIgniter",
+        "NodeJs", "ExpressJs", "GatsbyJS", "Jest", "TypeScript",
+        "MySQL", "GraphQl", "GroQ", "AJAX", "REST APIs",
+        "JSON", "SanityIO", "StrapiJS", "Web Design",
+        "Azure", "GCP", "jQuery", "Bootstrap", "TailwindCSS",
+        "SalJS", "Gsap", "SCSS", "Git", "GitHub",
+        "Web Performance Optimization", "User Experience", "SEO",
+        "Analytical Skills", "Creative Problem Solving",
+        "Collaboration", "Effective Communication", "Independent Worker", "Self Motivated"
+      ],
       projects: [
         {
           name: "Portfolio Website",
@@ -136,8 +147,23 @@ export default {
           name: "Chatbot Integration",
           description: "A chatbot integrated into a website using OpenAI's GPT model.",
           link: "https://example.com"
+        },
+        {
+          name: "Melvorite Chrome Extension",
+          description: "Chrome extension for automating tasks in Melvor Idle using JavaScript and Chrome APIs.",
+          link: "https://github.com/jovylle/melvorite"
+        },
+        {
+          name: "ChatGPT Clone",
+          description: "Chat interface powered by OpenAI API, leveraging serverless functions for scalability.",
+          link: "https://quickchatgpt.atcebu.win"
+        },
+        {
+          name: "Stick Figure Game",
+          description: "Simple game built with PhaserJS, focused on engaging mechanics and responsive design.",
+          link: "https://flyingstickfigure.atcebu.win"
         }
-      ] // Example projects
+      ]
     };
   },
   computed: {
@@ -165,9 +191,8 @@ export default {
 <style scoped>
 .chatbot-toggle-button {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
-  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50%;

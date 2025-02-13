@@ -1,7 +1,7 @@
 <template>
-  <div class="chatbot-container">
+  <div class="chatbot-container rounded-2xl p-4">
     <div class="chatbot-header">
-      <h4>Ai assistant</h4>
+      <h4>AI assistant</h4>
       <button @click="$emit('close')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,12 +21,12 @@
         <p>{{ message.text }}</p>
       </div>
     </div>
-    <div class="chatbot-footer">
+    <div class="chatbot-footer justify-between space-x-5">
       <input
         v-model="userInput"
         @keyup.enter="sendMessage"
         placeholder="Type a message..."
-        class="p-3"
+        class="p-3 rounded-lg bg-ternary-light w-full"
       />
       <button class="p-3" @click="sendMessage">Send</button>
     </div>
@@ -74,12 +74,12 @@ export default {
 <style scoped>
 .chatbot-container {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
-  width: 310px;
+  min-width: 300px;
+  width: 40vw;
   background: white;
   border: 1px solid #ccc;
-  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .chatbot-header {
@@ -87,7 +87,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
 }
 .chatbot-body {
   max-height: 400px;
@@ -98,10 +98,16 @@ export default {
 .chatbot-footer {
   display: flex;
   padding: 10px;
-  border-top: 1px solid #ccc;
+  /* border-top: 1px solid #ccc; */
 }
 .chatbot-message {
   margin-bottom: 10px;
   padding: 0px 10px;
+}
+:nth-child(odd).chatbot-message {
+  text-align: right;
+}
+.chatbot-message:nth-child(even) {
+  @apply bg-primary-light p-5 rounded-lg;
 }
 </style>
