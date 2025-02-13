@@ -17,8 +17,7 @@
       </button>
     </div>
     <div class="chatbot-body">
-      <div v-for="message in messages" :key="message.id" class="chatbot-message">
-        <p>{{ message.text }}</p>
+      <div v-for="message in messages" :key="message.id" class="chatbot-message" v-html="message.html">
       </div>
     </div>
     <div class="chatbot-footer justify-between space-x-5">
@@ -34,6 +33,8 @@
 </template>
 
 <script>
+import { marked } from 'marked';
+
 export default {
   props: {
     skills: Array,
@@ -48,7 +49,7 @@ export default {
   methods: {
     async sendMessage() {
       const userMessage = this.userInput;
-      this.messages.push({ id: Date.now(), text: userMessage });
+      this.messages.push({ id: Date.now(), text: userMessage, html: marked(userMessage) });
       this.userInput = '';
 
       const response = await fetch('/api/chatbot', {
@@ -65,7 +66,7 @@ export default {
 
       const data = await response.json();
       const aiMessage = data.choices[0].message.content.trim();
-      this.messages.push({ id: Date.now() + 1, text: aiMessage });
+      this.messages.push({ id: Date.now() + 1, text: aiMessage, html: marked(aiMessage) });
     }
   }
 };
